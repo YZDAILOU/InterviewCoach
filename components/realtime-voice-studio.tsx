@@ -536,6 +536,18 @@ export function RealtimeVoiceStudio() {
                 : "Here is the post-call feedback from the interview."}
           </p>
 
+          {reviewState === "reviewing" ? (
+            <div className="review-loading" aria-live="polite">
+              <span className="review-spinner" aria-hidden="true" />
+              <div>
+                <div className="review-loading-title">Updating feedback</div>
+                <div className="review-loading-copy">
+                  The coach is scoring confidence, clarity, structure, and specificity right now.
+                </div>
+              </div>
+            </div>
+          ) : null}
+
           <div className="feedback-grid">
             <div className="score-card">
               <div className={`score-value ${reviewConfidence === null ? "score-value-pending" : ""}`}>
